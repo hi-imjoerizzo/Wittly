@@ -1,18 +1,17 @@
 var express = require('express');
+var app = express();
+var port     = process.env.PORT || 3000;
+
+var cookieParser = require('cookie-parser');
+var logger = require('morgan');
+var mongoose = require('mongoose');
+var bodyParser = require('body-parser');
+
 var path = require('path');
 var favicon = require('serve-favicon');
 
-var port     = process.env.PORT || 3000;
-var mongoose = require('mongoose');
-
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
-
 var routes = require('./routes/index');
 var users = require('./routes/users');
-
-var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
